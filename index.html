@@ -6,26 +6,31 @@
     <title>SITE EXTREMAMENTE PROFISSIONAL</title>
     <style>
         body {
-            background-color: #ffccf2;
-            color: #333;
+            background: linear-gradient(135deg, #0077b6, #00b894);
+            color: #fff;
             font-family: 'Arial', sans-serif;
             text-align: center;
             padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         h1 {
-            text-shadow: 2px 2px 0px #555;
-            border: 3px solid #555;
-            background-color: #ffb3d9;
+            text-shadow: 2px 2px 0px #004d73;
+            border: 3px solid #004d73;
+            background-color: rgba(0, 0, 0, 0.2);
             padding: 10px;
             font-size: 36px;
+            border-radius: 10px;
         }
         .container {
-            background-color: #ffe6f2;
-            border: 3px solid #ff66b2;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 3px solid #004d73;
             padding: 20px;
             margin-top: 20px;
             border-radius: 15px;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
             max-width: 400px;
             margin-left: auto;
             margin-right: auto;
@@ -38,11 +43,11 @@
         }
         input, textarea {
             padding: 8px;
-            border: 2px solid #ff66b2;
+            border: 2px solid #00b894;
             border-radius: 5px;
         }
         button {
-            background-color: #ff66b2;
+            background-color: #00b894;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -52,13 +57,13 @@
             width: 100%;
         }
         button:hover {
-            background-color: #e64d99;
+            background-color: #008c72;
         }
         #resultado {
             margin-top: 20px;
             background-color: #fff;
             color: #000;
-            border: 2px solid #ff66b2;
+            border: 2px solid #00b894;
             padding: 15px;
             border-radius: 10px;
         }
@@ -68,19 +73,19 @@
     <h1>SITE EXTREMAMENTE PROFISSIONAL</h1>
 
     <div class="container">
-        <p>Oi Bruna, eu poderia ter te mandado uma mensagem, mas preferi investir tempo e criar este site extremamente profissional para te perguntar uma coisa importante:</p>
-        <h2>Vamos sair um dia desses?</h2>
-        <p>Se sim, escolha uma data, um horário e sugira algo incrível para fazermos!</p>
+        <p>Oi Bruna, obrigado por aceitar o convite! Eu já estou ansioso para nosso encontro.</p>
+        <p>Sugiro que saíamos no <strong>sábado, 29 de março</strong>, e que eu te busque às <strong>18h30</strong>.</p>
+        <p>Se esse dia e horário funcionar para você, é só confirmar abaixo. Se quiser sugerir outra ideia, também fique à vontade!</p>
 
         <form id="conviteForm">
             <label for="data">Data:</label>
-            <input type="date" id="data" required>
+            <input type="date" id="data" value="2025-03-29" required>
 
             <label for="hora">Hora:</label>
-            <input type="time" id="hora" required>
+            <input type="time" id="hora" value="18:30" required>
 
             <label for="sugestao">Sugestão do que fazer:</label>
-            <textarea id="sugestao" rows="4" required></textarea>
+            <textarea id="sugestao" rows="4" placeholder="Deixe sua sugestão aqui..." required></textarea>
 
             <button type="button" onclick="mostrarResultado()">ENVIAR</button>
         </form>
@@ -97,11 +102,11 @@
             const resultadoDiv = document.getElementById('resultado');
             if (data && hora && sugestao) {
                 resultadoDiv.innerHTML = `
-                    <h3>Ótimo! A Bruna escolheu:</h3>
+                    <h3>Perfeito! Aqui estão os detalhes:</h3>
                     <p><strong>Data:</strong> ${data}</p>
                     <p><strong>Hora:</strong> ${hora}</p>
                     <p><strong>Sugestão:</strong> ${sugestao}</p>
-                    <p>Agora é só você não estragar tudo!</p>
+                    <p>Vai ser incrível!</p>
                 `;
             } else {
                 resultadoDiv.innerHTML = "<p>Por favor, preencha todos os campos!</p>";

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITE EXTREMAMENTE PROFISSIONAL</title>
+    <style>
+        body {
+            background-color: #ffccf2;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            text-shadow: 2px 2px 0px #555;
+            border: 3px solid #555;
+            background-color: #ffb3d9;
+            padding: 10px;
+            font-size: 36px;
+        }
+        .container {
+            background-color: #ffe6f2;
+            border: 3px solid #ff66b2;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        label, input, textarea {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        input, textarea {
+            padding: 8px;
+            border: 2px solid #ff66b2;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff66b2;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #e64d99;
+        }
+        #resultado {
+            margin-top: 20px;
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #ff66b2;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SITE EXTREMAMENTE PROFISSIONAL</h1>
+
+    <div class="container">
+        <p>Oi Bruna, eu poderia ter te mandado uma mensagem, mas preferi investir tempo e criar este site extremamente profissional para te perguntar uma coisa importante:</p>
+        <h2>Vamos sair um dia desses?</h2>
+        <p>Se sim, escolha uma data, um horário e sugira algo incrível para fazermos!</p>
+
+        <form id="conviteForm">
+            <label for="data">Data:</label>
+            <input type="date" id="data" required>
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" required>
+
+            <label for="sugestao">Sugestão do que fazer:</label>
+            <textarea id="sugestao" rows="4" required></textarea>
+
+            <button type="button" onclick="mostrarResultado()">ENVIAR</button>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function mostrarResultado() {
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+            const sugestao = document.getElementById('sugestao').value;
+
+            const resultadoDiv = document.getElementById('resultado');
+            if (data && hora && sugestao) {
+                resultadoDiv.innerHTML = `
+                    <h3>Ótimo! A Bruna escolheu:</h3>
+                    <p><strong>Data:</strong> ${data}</p>
+                    <p><strong>Hora:</strong> ${hora}</p>
+                    <p><strong>Sugestão:</strong> ${sugestao}</p>
+                    <p>Agora é só você não estragar tudo!</p>
+                `;
+            } else {
+                resultadoDiv.innerHTML = "<p>Por favor, preencha todos os campos!</p>";
+            }
+        }
+    </script>
+</body>
+</html>
